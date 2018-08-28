@@ -13,6 +13,7 @@ prompt-toolkit = "*"
 texttable = "*"
 pyyaml = "*"
 paramiko = "*"
+pexpect = "*"
 
 [requires]
 python_version = "2.7"
