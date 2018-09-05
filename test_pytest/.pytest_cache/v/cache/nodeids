@@ -1,5 +1,0 @@
-[
-  "test_pytest.py::test_func", 
-  "test_pytest.py::TestClass::()::test_one", 
-  "test_pytest.py::TestClass::()::test_two"
-]

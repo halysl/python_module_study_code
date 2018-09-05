@@ -11,7 +11,7 @@ ssh.connect(
     '10.10.100.71',
     port=22,
     username='root',
-    password='cljslrl0620',
+    password='xxxxx',
     compress=True)
 # 建立交互式shell连接
 channel = ssh.invoke_shell()

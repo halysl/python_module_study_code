@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
-import os
 import yaml
-from schema import Schema, Use, Or
+from schema import Schema, Use
 
 
 def aaa(schema):
