@@ -14,7 +14,8 @@ class User(Base):
     age = Column('age', Integer)
 
     def __repr__(self):
-        return "<User(id='%s' name='%s' age='%s')>" % (self.id, self.name, self.age)
+        return "<User(id='%s' name='%s' age='%s')>" % (
+            self.id, self.name, self.age)
 
 
 class Role(Base):

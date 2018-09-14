@@ -36,7 +36,7 @@ def run(cmd, filter_=False, ssh=None):
             out_msg = p.stdout.read()
             err_msg = p.stderr.read()
             exit_code = p.wait()
-
+        logger.info(exit_code)
         if filter_:
             out_list = out_msg.splitlines()
             if "Exit Code" in out_list[-1]:
@@ -67,7 +67,7 @@ def run_cmd(cmd, filter_=False, ssh=None):
 
 base_path = os.path.dirname(os.path.abspath(__file__))
 
-log_dir = os.path.join(base_path, 'test_tar_args')
+log_dir = os.path.join(base_path)
 target = os.path.join(base_path, 'x.tar.gz')
 cmd = 'find {} -mtime -10 -print0 | xargs -0 tar czvf {}'.format(log_dir, target)
 
