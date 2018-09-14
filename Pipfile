@@ -15,6 +15,7 @@ pyyaml = "*"
 paramiko = "*"
 pexpect = "*"
 pytest = "*"
+requests = "*"
 
 [requires]
 python_version = "2.7"
