@@ -5,12 +5,16 @@ from first_requests import get_response
 
 
 def first_parse(response):
-    res = dict()
+    results = list()
     soup = BeautifulSoup(response)
-    title = soup.title.string
-
-    res['title'] = title
-    return soup.prettify()
+    for i in soup.find_all('a'):
+        res = dict()
+        res['tag'] = 'a'
+        # res['class'] = i['class']
+        # res['href'] = i['href']
+        # res['name'] = i['name']
+        results.append(res)
+    return results
 
 
 response = get_response('www.baidu.com')
