@@ -104,3 +104,5 @@ ENV/
 *.pyc
 *.egg
 .idea
+
+.DS_Store
