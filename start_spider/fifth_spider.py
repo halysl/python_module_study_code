@@ -9,21 +9,27 @@ url = 'http://github.com'
 
 
 def redirects():
+    # GET、OPTIONS、POST、PUT、PATCH 或者 DELETE，默认重定向，head默认不重定向
     r = requests.get(url)
+    print('origin url', url)
     print('r.url:', r.url)
     print('r.status_code:', r.status_code)
     print('r.history:', r.history)
 
 
 def no_redirects():
+    # 虽然默认重定向，但是可以通过allow_redirects修改
     r = requests.get(url, allow_redirects=False)
+    print('origin url', url)
     print('r.url:', r.url)
     print('r.status_code:', r.status_code)
     print('r.history:', r.history)
 
 
 def redirects_head():
+    # 虽然默认不重定向，但是可以通过allow_redirects修改
     r = requests.head('http://github.com', allow_redirects=True)
+    print('origin url', url)
     print('r.url:', r.url)
     print('r.status_code:', r.status_code)
     print('r.history:', r.history)
