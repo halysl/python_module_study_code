@@ -1,16 +1,15 @@
 # -*- coding:utf-8 -*-
-
 # author:light
 # date:
 # info:None
 
-
 import requests
 import exception
+from second_spider import get_text_info, get_json_info
 
 
-def get_info(url, flag=None):
-    r = requests.get(url)
+def get_info(url, headers=None, flag=None):
+    r = requests.get(url, headers=headers)
     if r.status_code == 200:
         r.encoding = 'utf-8'
     else:
@@ -26,15 +25,8 @@ def get_info(url, flag=None):
         pass
 
 
-def get_json_info(response):
-    return response.json()
-
-
-def get_text_info(response):
-    return response.text
-
-
 if __name__ == "__main__":
-    url = 'https://api.github.com/events'
-    result = get_info(url, 'json')
+    url = 'https://api.github.com/some/endpoint'
+    headers = {'user-agent': 'my-app/0.0.1'}
+    result = get_info(url, headers=headers)
     print(result)
