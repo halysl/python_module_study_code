@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # author:light
-# date:
-# info:None
+# date:2018-10-20 12:00
+# info:添加headers
 
 import requests
 import exception

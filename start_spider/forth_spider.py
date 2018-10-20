@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # author:light
-# date:
-# info:None
+# date:2018-10-20 14:00
+# info:查看返回的cookies
 
 
 import requests

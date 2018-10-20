@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 
 # author:light
-# date:
-# info:None
+# date:2018-10-20 11:00
+# info:return数据类型text或者json
 
 
 import requests
