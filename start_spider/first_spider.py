@@ -2,7 +2,6 @@
 
 
 import requests
-from bs4 import BeautifulSoup as bs
 
 
 class HttpConnectError(Exception):
@@ -22,11 +21,12 @@ def get_info(url):
         raise HttpConnectError
 
 
-try:
-    url = 'http://www.baidu.com'
-    result = get_info(url)
-    print(result)
-except HttpConnectError as e:
-    print('连接错误')
-except UnknowError as e:
-    print(e.message)
+if __name__ == "__main__":
+    try:
+        url = 'http://www.baidu.com'
+        result = get_info(url)
+        print(result)
+    except HttpConnectError as e:
+        print('连接错误')
+    except UnknowError as e:
+        print(e.message)
