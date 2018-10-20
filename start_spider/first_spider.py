@@ -2,15 +2,7 @@
 
 
 import requests
-
-
-class HttpConnectError(Exception):
-    pass
-
-
-class UnknowError(Exception):
-    pass
-
+import exception
 
 def get_info(url):
     r = requests.get(url)
@@ -18,7 +10,7 @@ def get_info(url):
         r.encoding = 'utf-8'
         return r.text
     else:
-        raise HttpConnectError
+        raise exception.HttpConnectError
 
 
 if __name__ == "__main__":
@@ -26,7 +18,7 @@ if __name__ == "__main__":
         url = 'http://www.baidu.com'
         result = get_info(url)
         print(result)
-    except HttpConnectError as e:
+    except exception.HttpConnectError as e:
         print('连接错误')
-    except UnknowError as e:
+    except exception.UnknowError as e:
         print(e.message)

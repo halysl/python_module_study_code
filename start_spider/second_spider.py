@@ -6,7 +6,7 @@
 
 
 import requests
-from first_spider import HttpConnectError
+import exception
 
 
 def get_info(url, flag):
@@ -14,7 +14,7 @@ def get_info(url, flag):
     if r.status_code == 200:
         r.encoding = 'utf-8'
     else:
-        raise HttpConnectError
+        raise exception.HttpConnectError
 
     if flag == 'text':
         return get_text_info(r)
