@@ -14,15 +14,12 @@ class UnknowError(Exception):
 
 
 def get_info(url):
-    try:
-        r = requests.get(url)
-        if r.status_code == 200:
-            r.encoding = 'utf-8'
-            return r.text
-        else:
-            raise HttpConnectError
-    except UnknowError as e:
-        print(e.message)
+    r = requests.get(url)
+    if r.status_code == 200:
+        r.encoding = 'utf-8'
+        return r.text
+    else:
+        raise HttpConnectError
 
 
 try:
@@ -31,3 +28,5 @@ try:
     print(result)
 except HttpConnectError as e:
     print('连接错误')
+except UnknowError as e:
+    print(e.message)
