@@ -10,11 +10,14 @@ from bs4 import BeautifulSoup as bs
 
 
 def get_info(url, headers=None, flag=None):
-    r = requests.get(url)
+    r = requests.get(url, headers=headers)
     if r.status_code == requests.codes.ok:
-        return r.text
+        r.encoding = 'utf-8'
     else:
         return requests.RequestException
+
+    if not flag:
+        return r.text
 
 
 if __name__ == "__main__":
