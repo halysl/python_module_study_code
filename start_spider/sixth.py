@@ -10,7 +10,11 @@ from forth_spider import get_session_info
 
 
 def get_session():
-    return requests.session()
+    s = requests.Session()
+    # 会话也可用来为请求方法提供缺省数据。
+    s.auth = ('user', 'pass')
+    s.headers.update({'x-test': 'true'})
+    return s
 
 
 def get_info(url, flag=None):
@@ -31,3 +35,9 @@ def get_info(url, flag=None):
         return get_session_info(r)
     else:
         pass
+
+
+if __name__ == "__main__":
+    url = 'http://httpbin.org/cookies/set/sessioncookie/123456789'
+    result = get_info(url)
+    print(result)
