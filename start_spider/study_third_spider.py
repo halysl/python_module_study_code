@@ -5,7 +5,7 @@
 
 import requests
 import exception
-from second_spider import get_text_info, get_json_info
+from study_second_spider import get_text_info, get_json_info
 
 
 def get_info(url, headers=None, flag=None):
