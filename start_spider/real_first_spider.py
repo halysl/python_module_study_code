@@ -41,9 +41,16 @@ def get_contents(context):
     print('soup.head.contents', soup.head.contents)
 
 
+def get_children(context):
+    soup = bs(context)
+    for child in soup.head.children:
+        print(child)
+
+
 if __name__ == "__main__":
     url = 'https://steamcn.com/forum.php'
     result = get_info(url)
     # preffity_print(result)
     # get_some_info(result)
-    get_contents(result)
+    # get_contents(result)
+    get_children(result)
