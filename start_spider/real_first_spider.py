@@ -25,7 +25,19 @@ def preffity_print(context):
     print(soup.prettify())
 
 
+def get_some_info(context):
+    soup = bs(context)
+    print('soup.head:', soup.head)
+    print('soup.title:', soup.title)
+
+    print('soup.head.name:', soup.head.name)
+    print('soup.title.name', soup.title.name)
+
+    print('soup.find_all(a):', soup.find_all('a'))
+
+
 if __name__ == "__main__":
     url = 'https://steamcn.com/forum.php'
     result = get_info(url)
     preffity_print(result)
+    get_some_info(result)
