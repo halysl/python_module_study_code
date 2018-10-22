@@ -20,7 +20,12 @@ def get_info(url, headers=None, flag=None):
         return r.text
 
 
+def preffity_print(context):
+    soup = bs(context)
+    print(soup.prettify())
+
+
 if __name__ == "__main__":
     url = 'https://steamcn.com/forum.php'
     result = get_info(url)
-    print(result)
+    preffity_print(result)
