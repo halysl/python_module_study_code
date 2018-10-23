@@ -17,3 +17,11 @@ str2 = 'scp ' + server['ip'] + ':' + ORACLE_BASE + '/diag/rdbms/' + dbname.lower
 
 print(str1)
 print(str2)
+
+print("123",
+      "sad"
+      "qwe",
+      """123
+      456
+      789
+      """)
