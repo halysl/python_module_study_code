@@ -37,13 +37,17 @@ def get_some_info(context):
 
 
 def get_contents(context):
+    # tag的 .contents 属性可以将tag的子节点以列表的方式输出
     soup = bs(context)
-    print('soup.head.contents', soup.head.contents)
+    tag = soup.head
+    print('soup.head.contents', tag.contents)
 
 
 def get_children(context):
+    # 通过tag的 .children 生成器,可以对tag的子节点进行循环
     soup = bs(context)
-    for child in soup.head.children:
+    tag = soup.head
+    for child in tag.children:
         print(child)
 
 
