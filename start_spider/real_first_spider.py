@@ -3,7 +3,7 @@
 # date:
 # info:一个真正，可用的爬虫
 
-# 选择目标：pass
+# 选择目标：https://steamcn.com/forum.php
 
 import requests
 from bs4 import BeautifulSoup as bs
