@@ -3,7 +3,7 @@
 # author:light
 # date:2018-10-20 11:00
 # info:return数据类型text或者json
-
+# slogan:狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
 
 import requests
 import exception
