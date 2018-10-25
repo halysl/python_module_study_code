@@ -8,14 +8,27 @@
 import mock
 import pytest
 import os
-from common_func import func
+from common_func import func_t
 
 
 def test_func1():
-    path = func()
-    assert path == '/Users/light/open_code/python_module_study_code/study_mock/study_mock_common/common_func.pyc'
+    num = func_t()
+    assert num == '1234'
 
 @mock.patch('common_func.func', return_value='1')
 def test_func2(mock_func):
-    path = func()
-    assert path == '1'
+    num = mock_func()
+    assert num == '1'
+
+def test_func3():
+    mock_func = mock.Mock(return_value='1')
+    func_t = mock_func
+    num = func_t()
+    assert num == '1'
+
+@mock.patch('common_func.func', return_value='1')
+def test_func4(mock_func):
+    mock_func.return_value = '1'
+    num = func_t()
+    assert num == '1'
+
