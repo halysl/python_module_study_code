@@ -9,4 +9,7 @@ import os
 
 
 def func():
-    return os.path.abspath(__file__)
+    return '1234'
+
+def func_t():
+    return func()

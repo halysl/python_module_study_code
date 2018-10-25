@@ -29,6 +29,7 @@ def fun3():
         for line in result:
             f.write(line)
 
+
 if __name__ == "__main__":
     fun1()
     fun2()
