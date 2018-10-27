@@ -10,6 +10,7 @@ import logging
 import logging.handlers
 import os
 import sys
+import pdb
 
 import requests
 from lxml import etree
@@ -39,10 +40,10 @@ logger = get_logger(logging.INFO)
 
 def get_info(url, headers=None, flag=None):
     r = requests.get(url, headers=headers)
-    if r.status_code == '200':
+    if r.status_code == 200:
         r.encoding = 'utf-8'
     else:
-        return requests.RequestException
+        raise requests.RequestException
 
     if not flag:
         return r.text
@@ -57,6 +58,7 @@ if __name__ == "__main__":
     try:
         url = 'https://steamcn.com'
         context = get_info(url)
-        print context
+        print get_xml_info(context)
     except requests.RequestException as e:
+        logger.error(e.message)
         sys.exit(-1)
