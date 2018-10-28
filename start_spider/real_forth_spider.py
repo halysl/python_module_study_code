@@ -43,7 +43,7 @@ def get_info():
         date = f.read()
     tree = html.fromstring(date)
 
-    result = tree.xpath('///*[@id="threadlisttableid"]/tbody')
+    result = tree.xpath('//*[@id="threadlisttableid"]/tbody')
 
     return result
 
@@ -63,10 +63,10 @@ def parse_date(tbody_list):
         
         if title:
             temp = dict()
-            temp['title'] = title
+            temp['title'] = title[0]
             date.append(temp)
         
-        return date
+    return date
 
 
 if __name__ == "__main__":
