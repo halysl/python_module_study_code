@@ -13,7 +13,7 @@ import sys
 import pdb
 
 import requests
-from lxml import etree
+from lxml import html
 
 
 curr_path = os.path.dirname(os.path.abspath(__file__))
@@ -49,16 +49,28 @@ def get_info(url, headers=None, flag=None):
         return r.text
 
 def get_xml_info(context):
-    html = etree.HTML(context)
-    result = etree.tostring(html)
+    tree = html.fromstring(context)
+    return tree
+
+def parse_info(xml_parse):
+    result = xml_parse.xpath('//*[@id="wp"]/div[2]/div[2]/div[1]/div[2]/div[1]/a/@href')
     return result
 
+def parse_info2(xml_parse):
+    result = xml_parse.xpath('//*[@id="threadlisttableid"]')
+    print result
 
 if __name__ == "__main__":
     try:
         url = 'https://steamcn.com'
         context = get_info(url)
-        print get_xml_info(context)
+        xml_parse = get_xml_info(context)
+        next_url = parse_info(xml_parse)[0]
+        next_url = ''.join([url, next_url])
+        
+        context = get_info(url)
+        xml_parse = get_xml_info(context)
+        parse_info2(xml_parse)
     except requests.RequestException as e:
         logger.error(e.message)
         sys.exit(-1)
