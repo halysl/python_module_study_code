@@ -11,5 +11,12 @@ import os
 def func():
     return '1234'
 
-def func_t():
-    return func()
+class Tea(object):
+    def __init__(self):
+        pass
+    
+    def return_a(self):
+        return 'a'
+    
+    def return_b(self):
+        return 'b'

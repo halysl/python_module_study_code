@@ -8,27 +8,15 @@
 import mock
 import pytest
 import os
-from common_func import func_t
+import common_func
 
 
 def test_func1():
-    num = func_t()
+    num = common_func.func()
     assert num == '1234'
 
-@mock.patch('common_func.func', return_value='1')
+@mock.patch('study_mock.study_mock_common.common_func.func')
 def test_func2(mock_func):
-    num = mock_func()
-    assert num == '1'
-
-def test_func3():
-    mock_func = mock.Mock(return_value='1')
-    func_t = mock_func
-    num = func_t()
-    assert num == '1'
-
-@mock.patch('common_func.func', return_value='1')
-def test_func4(mock_func):
     mock_func.return_value = '1'
-    num = func_t()
-    assert num == '1'
+    assert common_func.func() == '1'
 
