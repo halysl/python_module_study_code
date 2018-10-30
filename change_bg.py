@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-# @Date    : 2018-05-21 12:07:17
+# @Date    : 2018-10-30 18:37:17
 # @Author  : Light (halysl0817@gmail.com)
 # @Link    : ${link}
 # @Version : $Id$
+# @slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
+# @info: 专为deepin linux设置壁纸，需要用户提供壁纸文件夹，需要python3
 
 import os
 import random
@@ -22,8 +24,8 @@ path = "/home/light/Documents/code/spider-on-lol/lolSpider/lolSpider/img/hero_sk
 pic_list = os.listdir(path)
 
 # 确切的文件位置，以及确切的更换指令
-real_path = path + str(random.choices(pic_list))[2:-2]
-real_cmd = cmd + "\"" + real_path +"\""
+real_path = ''.join([path, str(random.choices(pic_list))[2:-2]])
+real_cmd = "{cmd} {path}".format(cmd, real_path)
 
 # 执行
 os.system(real_cmd)
