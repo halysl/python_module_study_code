@@ -20,7 +20,7 @@ curr_path = os.path.dirname(os.path.abspath(__file__))
 
 def get_logger(level):
     # 生成日志文件名
-    log_file_name = os.path.join(curr_path, "real_second_spider.log")  # 日志名
+    log_file_name = os.path.join(curr_path, "spider.log")  # 日志名
     # 创建logger记录器和输出格式
     logger_ = logging.getLogger("second-spider")
     logger_.setLevel(level)

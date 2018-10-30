@@ -5,7 +5,7 @@
 # slogan:狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
 import requests
 import exception
-from study_second_spider import get_text_info, get_json_info
+from study_2_spider import get_text_info, get_json_info
 
 
 def get_info(url, headers=None, flag=None):
