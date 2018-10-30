@@ -1,8 +1,10 @@
-# -*- coding:utf-8 -*-
-# author:light
-# date:2018-10-20 15:00
-# info:重定向相关
-# slogan:狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
+# -*- coding: utf-8 -*-
+# @Date    : 2018-10-30 18:37:17
+# @Author  : Light (halysl0817@gmail.com)
+# @Link    : ${link}
+# @Version : $Id$
+# @slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
+# @info: $info$
 
 import requests
 

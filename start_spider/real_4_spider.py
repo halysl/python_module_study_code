@@ -1,8 +1,10 @@
-# -*- coding:utf-8 -*-
-# author:light
-# date:2018-10-28
-# info:可用，但由于js限制，暂时使用本地保存文件
-# slogan:狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
+# -*- coding: utf-8 -*-
+# @Date    : 2018-10-30 18:37:17
+# @Author  : Light (halysl0817@gmail.com)
+# @Link    : ${link}
+# @Version : $Id$
+# @slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
+# @info: $info$
 
 # 选择目标：https://steamcn.com/f161-1
 
