@@ -26,4 +26,6 @@ def multiply(a, b):
     return a * b
 
 if __name__ == "__main__":
+    # 以下代码启动doctets，或者
+    # 命令行下：python -B doctest -v *.py
     doctest.testmod(verbose=False)

@@ -1,0 +1,16 @@
+    """
+    >>> from test_doctest import multiply
+    >>> multiply(1, 4)
+    4
+    >>> multiply(0, 2)
+    0
+    >>> multiply(2, 0.5)
+    1.0
+    >>> multiply('a', 3)
+    'aaa'
+    >>> multiply(3, 'a')
+    'aaa'
+    >>> multiply('a', 0)
+    ''
+    
+    """
