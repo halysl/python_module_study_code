@@ -18,5 +18,5 @@ for k, v in data.items():
     value.append(int(v))
 
 wordcloud = WordCloud(width=1300, height=620)
-wordcloud.add("", name, value, word_size_range=[20, 100])
+wordcloud.add("Xia", name, value, shape='circle', word_size_range=[20, 100])
 wordcloud.render()
