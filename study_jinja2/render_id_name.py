@@ -7,8 +7,8 @@
 # @info: $info$
 
 from jinja2 import Environment, PackageLoader
-env = Environment()
+env = Environment(loader=PackageLoader('jinja2_templates', 'templates'))
 
-template = env.get_template('templates/form.html')
+template = env.get_template('form.html')
 
-print template.render(item=[{'id': 1, 'name': 'Ash'}])
+print template.render(items=[{'id': 1, 'name': 'Ash'}])
