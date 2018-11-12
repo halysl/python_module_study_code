@@ -6,9 +6,12 @@
 # @slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
 # @info: $info$
 
+import json
 from jinja2 import Environment, PackageLoader
 env = Environment(loader=PackageLoader('jinja2_templates', 'templates'))
 
 template = env.get_template('form.html')
 
-print template.render(items=[{'id': 1, 'name': 'Ash'}])
+with open('data.json', 'r') as f:
+    data = f.read()
+print template.render(data)
