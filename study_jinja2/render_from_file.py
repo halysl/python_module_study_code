@@ -13,5 +13,9 @@ env = Environment(loader=PackageLoader('jinja2_templates', 'templates'))
 template = env.get_template('form.html')
 
 with open('data.json', 'r') as f:
-    data = f.read()
-print template.render(data)
+    data = json.load(f)
+
+result = template.render(data)
+
+with open('render_result.html', 'w') as f:
+    f.write(result)
