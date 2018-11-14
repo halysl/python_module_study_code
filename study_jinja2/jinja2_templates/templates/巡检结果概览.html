@@ -1,0 +1,125 @@
+<html>
+<title>Title</title>
+<table border="1">
+    <tr>
+        <th colspan="2">巡检项</th>
+        <th>状态</th>
+        <th>故障描述</th>
+    </tr>
+    <tr>
+        <th rowspan="3">硬件状态检查</th>
+        <th>服务器运行状态检查</th>
+        <td>{{ ov.hardware.service.status }}</td>
+        <td>{{ ov.hardware.service.des }}</td>
+    </tr>
+    <tr>
+        <th>IB链路状态</th>
+        <td>{{ ov.hardware.ib.status }}</td>
+        <td>{{ ov.hardware.ib.des }}</td>
+    </tr>
+    <tr>
+        <th>存储设备状态</th>
+        <td>{{ ov.hardware.storage.status }}</td>
+        <td>{{ ov.hardware.storage.des }}</td>
+    </tr>
+    <tr>
+        <th>QData版本</th>
+        <th>QData各节点版本</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th rowspan="2">QLink状态</th>
+        <th>计算节点QLink状态</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>存储节点QLink状态</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th rowspan="6">RAC集群</th>
+        <th>GI软件版本及psu</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>CRS资源状态</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>CRS日志</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>ASM日志</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>ASM磁盘组</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>OCR/voting</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th rowspan="10">数据库</th>
+        <th>实录运行时长</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>DB软件版本及psu</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>数据库信息</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>内存参数设置</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>表空间使用率</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>自增长数据文件</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>offline数据文件</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Redo log组</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>归档量</th>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>失效索引</th>
+        <td></td>
+        <td></td>
+    </tr>
+
+</html>
