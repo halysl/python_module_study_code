@@ -14,9 +14,6 @@ def get_logger():
 logger = get_logger()
 
 
-def func():
+if __name__ == "__main__":
     for i in range(10000):
         logger.info(i)
-
-
-func()
