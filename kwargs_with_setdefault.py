@@ -17,6 +17,7 @@ def devide(a, b, **kwargs):
 
     :exception1 ZeroDivisionError
     :exception2 TypeError
+    :exception3 ValueError
     """
     kwargs.setdefault('precision', 2)
     try:
@@ -26,6 +27,14 @@ def devide(a, b, **kwargs):
         return e.message
     except TypeError as e:
         return e.message
+    except ValueError as e:
+        return e.message
 
 if __name__ == "__main__":
-    pass
+    for f in [
+        devide(1, 2), 
+        devide(10, 3), 
+        devide(10, 3, precision=3), 
+        devide(1, 0), 
+        devide('a', 2)]:
+        print(f)
