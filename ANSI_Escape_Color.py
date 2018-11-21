@@ -6,7 +6,8 @@
 # @slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
 # @info: $info$
 
-#   格式：\033[显示方式;前景色;背景色m $str \033[0m
+#   格式：开头                      字符串   结尾（可省去）
+#        \033[显示方式;前景色;背景色m $str    \033[0m
 #   说明:
 #
 #   前景色            背景色            颜色
@@ -77,7 +78,6 @@ STYLE = {
 
 
 def UseStyle(string, mode = '', fore = '', back = ''):
-
     mode  = '%s' % STYLE['mode'][mode] if STYLE['mode'].has_key(mode) else ''
 
     fore  = '%s' % STYLE['fore'][fore] if STYLE['fore'].has_key(fore) else ''
