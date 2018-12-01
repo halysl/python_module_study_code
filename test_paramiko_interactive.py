@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import paramiko
-import interactive
+from src.utils import interactive
+
 # 记录日志
 paramiko.util.log_to_file('/tmp/test')
 # 建立ssh连接

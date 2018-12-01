@@ -6,16 +6,16 @@
 # @slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
 # @info: $info$
 
-# 准备一个基类（父类）
-class BaseClass:
-     def talk(self):
-         print("i am people")
- 
- # 准备一个方法
-def say(self):
-     print("hello")
- 
-# 使用type来创建User类
-User = type("User", (BaseClass, object), {"name":"user", "say":say})
 
-print(User)
+class BaseClass(object):
+    def talk(self):
+        print("i am people")
+
+
+def say():
+    print("hello")
+
+
+if __name__ == "__main__":
+    User = type("User", (BaseClass, object), {"name": "user", "say": say})
+    print(User)
