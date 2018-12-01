@@ -2,7 +2,7 @@
 
 import unittest
 import mock
-from study_mock.study_mock_common import request_status_code
+from src.study_mock.study_mock_common import request_status_code
 
 
 class TestReturnCode(unittest.TestCase):

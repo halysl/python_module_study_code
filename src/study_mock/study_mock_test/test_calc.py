@@ -2,7 +2,7 @@
 
 import unittest
 import mock
-from study_mock.study_mock_common.calc import Count
+from src.study_mock import Count
 
 
 class TestCalc(unittest.TestCase):
