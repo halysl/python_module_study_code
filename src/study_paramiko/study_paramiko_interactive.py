@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 import paramiko
-from src.utils import interactive
+from utils import interactive
 
 # 记录日志
 paramiko.util.log_to_file('/tmp/test')

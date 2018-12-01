@@ -8,6 +8,7 @@
 
 import doctest
 
+
 def multiply(a, b):
     """
     >>> multiply(1, 4)
@@ -24,6 +25,7 @@ def multiply(a, b):
     ''
     """
     return a * b
+
 
 if __name__ == "__main__":
     # 以下代码启动doctets，或者

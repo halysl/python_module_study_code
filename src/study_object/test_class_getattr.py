@@ -6,6 +6,7 @@
 # @slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
 # @info: 类的__getattr__ __getattribute__方法
 
+
 class A(object):
     def __init__(self, name, age):
         self.name = name
@@ -27,9 +28,10 @@ class A(object):
         # self.__dict__保存着当前对象的所有属性，通过字典的方式调用
         self.__dict__[key] = value
 
+
 if __name__ == "__main__":
     a = A('Ash', 18)
-    
+
     print(a.name)
     print(a.__dict__.get('name'))
     print(a.__dict__['name'])

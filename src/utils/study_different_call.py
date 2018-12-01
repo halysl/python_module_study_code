@@ -7,11 +7,14 @@
 
 import os
 
+
 def fun1():
     print('1')
 
+
 def fun2():
     print('2')
+
 
 def fun3():
     file_path = os.path.abspath(__file__)

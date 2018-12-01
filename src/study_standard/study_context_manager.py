@@ -9,15 +9,17 @@
 from contextlib import contextmanager
 import time
 
+
 class File(object):
     def __init__(self, filename, method):
         self.fileobj = file(filename, method)
-    
+
     def __enter__(self):
         return self.fileobj
 
     def __exit__(self, type, value, traceback):
         self.fileobj.close()
+
 
 with File('test', 'a') as f:
     now = time.strftime('%a, %d %b %Y %H:%M:%S\n', time.localtime())
@@ -25,6 +27,7 @@ with File('test', 'a') as f:
 
 with File('test', 'r') as f:
     print f.read()
+
 
 # with File('test', 'r') as f:
 #     f.unknow_func()
@@ -35,11 +38,10 @@ def o_file(filename, method):
     yield f
     f.close()
 
+
 with o_file('test', 'a') as f:
     now = time.strftime('%a, %d %b %Y %H:%M:%S\n', time.localtime())
     f.write(now)
 
 with o_file('test', 'r') as f:
     print f.read()
-
-
