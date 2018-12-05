@@ -79,13 +79,10 @@ STYLE = {
 
 def UseStyle(string, mode='', fore='', back=''):
     mode = '%s' % STYLE['mode'].get(mode, '')
-
     fore = '%s' % STYLE['fore'].get(fore, '')
-
     back = '%s' % STYLE['back'].get(back, '')
-
+    
     style = ';'.join([s for s in [mode, fore, back] if s])
-
     style = '\033[%sm' % style if style else ''
 
     end = '\033[%sm' % STYLE['default']['end'] if style else ''
