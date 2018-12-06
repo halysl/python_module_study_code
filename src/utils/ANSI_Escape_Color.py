@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# @Date    : 2018-10-30 18:37:17
+# @Date    : 2018-12-06 16:46:17
 # @Author  : Light (halysl0817@gmail.com)
 # @Link    : ${link}
-# @Version : $Id$
+# @Version : 0.1
 # @slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
-# @info: $info$
+# @info: 调用ANSI_Escape_color，使输入结果渲染颜色
 
 #   格式：开头                      字符串   结尾（可省去）
 #        \033[显示方式;前景色;背景色m $str    \033[0m
@@ -76,58 +76,60 @@ STYLE = {
         },
 }
 
+def style_print(string, mode='', fore='', back=''):
+    """调用ANSI_Escape_color，使输入结果渲染颜色
 
-def UseStyle(string, mode='', fore='', back=''):
+    :param string: str 字符串 'test'
+    :param mode:str 显示模式 'bold'
+    :param fore:str 前景色 'green'
+    :param back:str 背景色 'red'
+    :return: '\033[1;32;41m test \033[0m'
+    """
     mode = '%s' % STYLE['mode'].get(mode, '')
-
     fore = '%s' % STYLE['fore'].get(fore, '')
-
     back = '%s' % STYLE['back'].get(back, '')
 
     style = ';'.join([s for s in [mode, fore, back] if s])
-
     style = '\033[%sm' % style if style else ''
-
     end = '\033[%sm' % STYLE['default']['end'] if style else ''
 
-    return '%s%s%s' % (style, string, end)
+    print '%s%s%s' % (style, string, end)
 
 
 def TestColor():
 
-    print UseStyle('正常显示')
-    print ''
+     style_print('正常显示')
+     ''
 
-    print "测试显示模式"
-    print UseStyle('高亮',   mode='bold'),
-    print UseStyle('下划线', mode='underline'),
-    print UseStyle('闪烁',   mode='blink'),
-    print UseStyle('反白',   mode='invert'),
-    print UseStyle('不可见', mode='hide')
-    print ''
+     "测试显示模式"
+     style_print('高亮', mode='bold'),
+     style_print('下划线', mode='underline'),
+     style_print('闪烁', mode='blink'),
+     style_print('反白', mode='invert'),
+     style_print('不可见', mode='hide')
+     ''
 
-    print "测试前景色"
-    print UseStyle('黑色',   fore='black'),
-    print UseStyle('红色',   fore='red'),
-    print UseStyle('绿色',   fore='green'),
-    print UseStyle('黄色',   fore='yellow'),
-    print UseStyle('蓝色',   fore='blue'),
-    print UseStyle('紫红色', fore='purple'),
-    print UseStyle('青蓝色', fore='cyan'),
-    print UseStyle('白色',   fore='white')
-    print ''
+     "测试前景色"
+     style_print('黑色', fore='black'),
+     style_print('红色', fore='red'),
+     style_print('绿色', fore='green'),
+     style_print('黄色', fore='yellow'),
+     style_print('蓝色',   fore='blue'),
+     style_print('紫红色', fore='purple'),
+     style_print('青蓝色', fore='cyan'),
+     style_print('白色',   fore='white')
+     ''
 
-    print "测试背景色"
-    print UseStyle('黑色',   back='black'),
-    print UseStyle('红色',   back='red'),
-    print UseStyle('绿色',   back='green'),
-    print UseStyle('黄色',   back='yellow'),
-    print UseStyle('蓝色',   back='blue'),
-    print UseStyle('紫红色', back='purple'),
-    print UseStyle('青蓝色', back='cyan'),
-    print UseStyle('白色',   back='white')
-    print ''
-
+     "测试背景色"
+     style_print('黑色',   back='black'),
+     style_print('红色',   back='red'),
+     style_print('绿色',   back='green'),
+     style_print('黄色',   back='yellow'),
+     style_print('蓝色',   back='blue'),
+     style_print('紫红色', back='purple'),
+     style_print('青蓝色', back='cyan'),
+     style_print('白色',   back='white')
+     ''
 
 if __name__ == '__main__':
 
