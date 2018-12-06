@@ -1,6 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+#=============================================================================
+# FileName: interactive.py
+# Desc: 建立交互式shell管道
+# Author: 刘志
+# Email: halysl0817@gmail.com
+# HomePage: ${link}
+# Version: 0.0.1
+# LastChange: 2018-12-06 17:18
+# History:
+# slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
+#=============================================================================
+"""
+
 import socket
 import sys
-# windows does not have termios...
 import termios
 import tty
 

@@ -20,7 +20,7 @@ def change_bg(path):
     # todo 可以递归的取
     pic_list = os.listdir(path)
     # 确切的文件位置，以及确切的更换指令
-    random_pic = str(random.choices(pic_list))
+    random_pic = str(random.choice(pic_list))
     real_path = os.path.join([path, random_pic])
     real_cmd = "{cmd} {path}".format(cmd, real_path)
 
