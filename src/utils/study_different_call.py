@@ -1,10 +1,18 @@
-# -*- coding:utf-8 -*-
-# author:light
-# date:
-# info:调用一次后“销毁部分代码”
-# slogan:狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
-# valid:54uC6aOO6aqk6Zuo5YKs57q45Lye77yM5ri45Lq65rWq6L+55q2l5LiN5LyR77yM5aSp5Zyw5ruC5rKx5aaC5L2V5rih77yM6JOR6KGj6KSq5bC95Lu75rWK5rWB44CC
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+#=============================================================================
+# FileName: study_different_call.py
+# Desc: 前后两次的调用会产生不同的结果
+# Author: 刘志
+# Email: halysl0817@gmail.com
+# HomePage: ${link}
+# Version: 0.0.1
+# LastChange: 2018-12-06 17:29
+# History:
+# slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
+#=============================================================================
+"""
 import os
 
 

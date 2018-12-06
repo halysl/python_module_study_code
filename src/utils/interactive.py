@@ -20,8 +20,10 @@ import termios
 import tty
 
 
-def interactive_shell(chan):
-    posix_shell(chan)
+def interactive_shell(channal):
+    """入口
+    """
+    posix_shell(channal)
 
 
 def posix_shell(chan):
@@ -32,7 +34,7 @@ def posix_shell(chan):
         tty.setcbreak(sys.stdin.fileno())
         chan.settimeout(0.0)
         while True:
-            r, w, e = select.select([chan, sys.stdin], [], [])
+            r, _, _ = select.select([chan, sys.stdin], [], [])
             if chan in r:
                 try:
                     x = chan.recv(1024)
