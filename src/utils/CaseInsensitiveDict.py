@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# @Date    : 2018-10-30 18:37:17
+# @Date    : 2018-12-06 16:52:17
 # @Author  : Light (halysl0817@gmail.com)
 # @Link    : ${link}
-# @Version : $Id$
+# @Version : 0.1
 # @slogan: 狂风骤雨催纸伞，游人浪迹步不休，天地滂沱如何渡，蓑衣褪尽任浊流。
 # @info: $info$
 
@@ -10,30 +10,18 @@ from collections import OrderedDict, MutableMapping, Mapping
 
 
 class CaseInsensitiveDict(MutableMapping):
-    """A case-insensitive ``dict``-like object.
+    """一个大小写不敏感的字典对象
 
-    Implements all methods and operations of
-    ``MutableMapping`` as well as dict's ``copy``. Also
-    provides ``lower_items``.
+    支持所有dict的方法。
+    所有key都应该是字符串。
+    重复的key（大小写不敏感）仅会记住最后一个。
+    ``iter(instance)``,``keys()``, ``items()``, ``iterkeys()``和``iteritems()``会区分大小写。
 
-    All keys are expected to be strings. The structure remembers the
-    case of the last key to be set, and ``iter(instance)``,
-    ``keys()``, ``items()``, ``iterkeys()``, and ``iteritems()``
-    will contain case-sensitive keys. However, querying and contains
-    testing is case insensitive::
-
+    接着，比较也会是大小写不敏感，例如:
         cid = CaseInsensitiveDict()
         cid['Accept'] = 'application/json'
         cid['aCCEPT'] == 'application/json'  # True
         list(cid) == ['Accept']  # True
-
-    For example, ``headers['content-encoding']`` will return the
-    value of a ``'Content-Encoding'`` response header, regardless
-    of how the header name was originally stored.
-
-    If the constructor, ``.update``, or equality comparison
-    operations are given keys that have equal ``.lower()``s, the
-    behavior is undefined.
     """
 
     def __init__(self, data=None, **kwargs):
@@ -43,14 +31,15 @@ class CaseInsensitiveDict(MutableMapping):
         self.update(data, **kwargs)
 
     def __setitem__(self, key, value):
-        # Use the lowercased key for lookups, but store the actual
-        # key alongside the value.
+        # 存储key时默认为小写
         self._store[key.lower()] = (key, value)
 
     def __getitem__(self, key):
+        # 根据传来的key的小写进行查询
         return self._store[key.lower()][1]
 
     def __delitem__(self, key):
+        # 根据传来的key的小写进行删除
         del self._store[key.lower()]
 
     def __iter__(self):
