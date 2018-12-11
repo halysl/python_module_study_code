@@ -42,11 +42,38 @@ def serialize(stream):
     pass
 
 
-if __name__ == "__main__":
-    try:
-        i = IStream()
-    except TypeError as e:
-        print(e.message)
+class Collect():
+    __metaclass__ = ABCMeta
 
-    i = SocketStream()
-    print serialize(i)
+    def __init__(self, name):
+        self.name = name
+
+    @abstractmethod
+    def collect(self, cmd):
+        pass
+    
+    @abstractmethod
+    def show(self):
+        pass
+
+class BaseCollect(Collect):
+    def __init__(self):
+        super(BaseCollect, self).__init__('base')
+    
+    def collect(self, cmd):
+        print(cmd)
+    
+    def show(self):
+        print(self.name)
+
+class DetailCollect(BaseCollect):
+    def __init__(self):
+        super(DetailCollect, self).__init__()
+    
+
+if __name__ == "__main__":
+    bc = BaseCollect()
+    bc.collect('ls')
+    bc.show()
+
+    dc = DetailCollect()
