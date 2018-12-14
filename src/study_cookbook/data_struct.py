@@ -15,7 +15,7 @@
 """
 
 def decompression_assignment():
-    """解压赋值
+    """解压可迭代对象赋值给多个变量（等数量变量）
     """
     # 可迭代对象根据位置赋值
     p = (4, 5)
@@ -53,5 +53,38 @@ def decompression_assignment():
     assert _2 == 91.1
     assert _3 == (2012, 12, 21)
 
+
+def decompression_assignment_to_few_param():
+    """解压可迭代对象赋值给多个变量(不等数量变量)
+    """
+    # only in python3
+    scores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    # *号可以指代多个元素，最终形成一个list，也就是说middle必定是list
+    first, *middle, last = scores
+    assert first == 1
+    assert last == 17
+    assert middle ==  [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+
+    # 对于list每一项都可以做解压
+    records = [
+    ('foo', 1, 2),
+    ('bar', 'hello'),
+    ('foo', 3, 4),
+    ]
+    for tag, *args in records:
+        if tag == 'foo':
+            assert args == [1, 2]
+        elif tag == 'bar':
+            assert args == ['hello']
+
+    # 字符串分割
+    line = 'nobody:*:-2:-2:Unprivileged User:/var/empty:/usr/bin/false'
+    uname, *fields, homedir, sh = line.split(':')
+    assert uname == 'nobody'
+    assert homedir == '/var/empty'
+    assert sh == '/usr/bin/false'
+
+
 if __name__ == "__main__":
     decompression_assignment()
+    decompression_assignment_to_few_param()
