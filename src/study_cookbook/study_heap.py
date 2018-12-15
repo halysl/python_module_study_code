@@ -36,5 +36,41 @@ def a_heap():
     assert min(li) == heapq.heappop(li)
     assert min(li) == heapq.heappop(li)
 
+class PriorityQueue(object):
+    """有优先级的队列"""
+    def __init__(self):
+        self._queue = []
+        self._index = 0
+
+    def push(self, item, priority):
+        # 关键， 插入数据，数据类型为tuple，包括级别，插入时的index， 实际数据
+        # 好处是heap的结构会根据三元组的前两个参数进行排序，也就是说，级别越高，在堆中被pop出的越早
+        # index为了确保同级别下顺序的一致性（无法同时push两个数据）
+        heapq.heappush(self._queue, (-priority, self._index, item))
+        self._index += 1
+
+    def pop(self):
+        # heap的结构特性，从列表中输出最小的值（构成的元组）
+        return heapq.heappop(self._queue)[-1]
+
+class Item:
+     def __init__(self, name):
+         self.name = name
+     def __repr__(self):
+         return '{!r}'.format(self.name)
+
+def priority_queue():
+    q = PriorityQueue()
+    q.push(Item('foo'), 1)
+    q.push(Item('bar'), 5)
+    q.push(Item('spam'), 4)
+    q.push(Item('grok'), 1)
+    print q.pop()
+    print q.pop()
+    print q.pop()
+    print q.pop()
+
+
 if __name__ == '__main__':
     a_heap()
+    priority_queue()
