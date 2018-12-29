@@ -16,10 +16,16 @@
 import re
 
 def replace_string_with_strmethod():
-    pass
+    text = 'yeah, but no, but yeah, but no, but yeah'
+    text.replace('yeah', 'yep')
+
+    print text
 
 def replace_string_with_resub():
-    pass
+    text = 'Today is 11/27/2012. PyCon starts 3/13/2013.'
+    re.sub(r'(\d+)/(\d+)/(\d+)', r'\3-\1-\2', text)
+
+    print text
 
 if __name__ == "__main__":
     replace_string_with_strmethod()
