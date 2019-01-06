@@ -68,6 +68,13 @@ def match_by_re():
     print m.group(3)
     print m.groups()
 
+def match_by_re_ignore_case():
+    """忽略大小写的匹配
+    """
+    string = 'UPPER PYTHON, lower python, Mixed Python' 
+    li = re.findall('python', string, flags=re.IGNORECASE)
+    print li
 
 if __name__ == "__main__":
     match_by_re()
+    match_by_re_ignore_case()
