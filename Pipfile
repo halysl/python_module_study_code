@@ -1,23 +1,11 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
 
 [packages]
-sqlalchemy = "*"
-ipython = "*"
-prompt = "*"
-prompt-toolkit = "*"
-texttable = "*"
-paramiko = "*"
-pexpect = "*"
-pytest = "*"
-requests = "*"
-pylint = "*"
-docxtpl = "*"
-pyecharts = "*"
 
 [requires]
 python_version = "3.7"
