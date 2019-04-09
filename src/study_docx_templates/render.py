@@ -46,7 +46,7 @@ context['link'] = rt_link
 
 # 渲染一个非主流文字颜色的富文本
 rt_color = RichText()
-rt_color.add('RED\t', color=RED)
+rt_color.add(u'啊萨阿德\t', color=RED)
 rt_color.add('GREEN\t', color=GREEN)
 rt_color.add('YELLO\t', color=YELLOW)
 rt_color.add('CYAN\t', color=CYAN)
