@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-
+"""
+redis 是一种 NoSQL， 它的数据有许多种类型，针对每种类型，对应的python-redis库有一套封装好的操作。
+"""
 import time
 import redis
 
