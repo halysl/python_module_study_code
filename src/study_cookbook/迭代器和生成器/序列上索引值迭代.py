@@ -6,7 +6,6 @@ def example_enumerate():
     li = ["a", "b", "c"]
     for index, value in enumerate(li):
         print("index={}\tvalue={}".format(index, value))
-    
     for index, value in enumerate(li, 1):
         print("index={}\tvalue={}".format(index, value))
 

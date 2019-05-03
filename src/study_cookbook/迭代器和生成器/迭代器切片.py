@@ -17,7 +17,6 @@ if __name__ == "__main__":
         c[10:20]
     except Exception as e:
         print(e.message)
-    
     d = itertools.islice(c, 10, 20)
     print(type(d))
     for x in d:
