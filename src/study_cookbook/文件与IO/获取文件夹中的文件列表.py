@@ -13,7 +13,7 @@ def example_os_list_dir():
 
     abspath = [os.path.join(dirpath, x) for x in list_dir]
     print(abspath)
-    name_sz_date = [(name, os.path.getsize(name), os.path.getmtime(name)) 
+    name_sz_date = [(name, os.path.getsize(name), os.path.getmtime(name))
                     for name in abspath]
     for name, size, mtime in name_sz_date:
         print("name:{}\tsize:{}\tmtime:{}\n".format(
