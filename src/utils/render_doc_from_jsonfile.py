@@ -7,4 +7,4 @@ with open('ds.json', 'r') as f:
     data = json.load(f)
 
 doc.render(data)
-doc.save( "generated_doc.docx")
+doc.save("generated_doc.docx")
