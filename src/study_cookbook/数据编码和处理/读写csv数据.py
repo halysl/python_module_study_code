@@ -5,6 +5,7 @@ import os
 import csv
 
 path = os.path.dirname(__file__)
+file_path = os.path.join(path, "stocks.csv")
 
 
 def example_csv_read():
@@ -37,7 +38,7 @@ def example_csv_write():
             ('AXP', 62.58, '6/11/2007', '9:36am', -0.46, 935000)
             ]
 
-    with open('stocks.csv', 'w') as f:
+    with open(file_path, 'w') as f:
         f_csv = csv.writer(f)
         f_csv.writerow(headers)
         f_csv.writerows(rows)
@@ -53,7 +54,7 @@ def example_csv_write2():
             'Time': '9:36am', 'Change': -0.46, 'Volume': 935000},
             ]
 
-    with open('stocks.csv', 'w') as f:
+    with open(file_path, 'w') as f:
         f_csv = csv.DictWriter(f, headers)
         f_csv.writeheader()
         f_csv.writerows(rows)
