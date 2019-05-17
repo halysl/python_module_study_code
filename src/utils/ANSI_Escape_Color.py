@@ -76,6 +76,7 @@ STYLE = {
         },
 }
 
+
 def style_print(string, mode='', fore='', back=''):
     """调用ANSI_Escape_color，使输入结果渲染颜色
 
@@ -93,44 +94,36 @@ def style_print(string, mode='', fore='', back=''):
     style = '\033[%sm' % style if style else ''
     end = '\033[%sm' % STYLE['default']['end'] if style else ''
 
-    print '%s%s%s' % (style, string, end)
+    print('%s%s%s' % (style, string, end))
 
 
 def TestColor():
+    style_print('正常显示')
+    # 测试显示模式
+    style_print('高亮', mode='bold')
+    style_print('下划线', mode='underline')
+    style_print('闪烁', mode='blink')
+    style_print('反白', mode='invert')
+    style_print('不可见', mode='hide')
+    # 测试前景色
+    style_print('黑色', fore='black')
+    style_print('红色', fore='red')
+    style_print('绿色', fore='green')
+    style_print('黄色', fore='yellow')
+    style_print('蓝色',   fore='blue')
+    style_print('紫红色', fore='purple')
+    style_print('青蓝色', fore='cyan')
+    style_print('白色',   fore='white')
 
-     style_print('正常显示')
-     ''
-
-     "测试显示模式"
-     style_print('高亮', mode='bold'),
-     style_print('下划线', mode='underline'),
-     style_print('闪烁', mode='blink'),
-     style_print('反白', mode='invert'),
-     style_print('不可见', mode='hide')
-     ''
-
-     "测试前景色"
-     style_print('黑色', fore='black'),
-     style_print('红色', fore='red'),
-     style_print('绿色', fore='green'),
-     style_print('黄色', fore='yellow'),
-     style_print('蓝色',   fore='blue'),
-     style_print('紫红色', fore='purple'),
-     style_print('青蓝色', fore='cyan'),
-     style_print('白色',   fore='white')
-     ''
-
-     "测试背景色"
-     style_print('黑色',   back='black'),
-     style_print('红色',   back='red'),
-     style_print('绿色',   back='green'),
-     style_print('黄色',   back='yellow'),
-     style_print('蓝色',   back='blue'),
-     style_print('紫红色', back='purple'),
-     style_print('青蓝色', back='cyan'),
-     style_print('白色',   back='white')
-     ''
+    # 测试背景色
+    style_print('黑色',   back='black')
+    style_print('红色',   back='red')
+    style_print('绿色',   back='green')
+    style_print('黄色',   back='yellow')
+    style_print('蓝色',   back='blue')
+    style_print('紫红色', back='purple')
+    style_print('青蓝色', back='cyan')
+    style_print('白色',   back='white')
 
 if __name__ == '__main__':
-
     TestColor()
