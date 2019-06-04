@@ -4,6 +4,7 @@
 import types
 from functools import wraps
 
+
 class Profiled:
     def __init__(self, func):
         wraps(func)(self)
@@ -19,11 +20,17 @@ class Profiled:
         else:
             return types.MethodType(self, instance)
 
+
 @Profiled
 def add(x, y):
     return x + y
+
 
 class Spam:
     @Profiled
     def bar(self, x):
         print(self, x)
+
+if __name__ == "__main__":
+    print(add(1, 2))
+    Spam().bar("hello")
