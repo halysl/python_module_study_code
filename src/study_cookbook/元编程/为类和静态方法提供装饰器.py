@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+# @classmethod 和 @staticmethod 实际上并不会创建可直接调用的对象
 
 import time
 from functools import wraps
 
-# A simple decorator
+
 def timethis(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -14,7 +15,7 @@ def timethis(func):
         return r
     return wrapper
 
-# Class illustrating application of the decorator to different kinds of methods
+
 class Spam:
     @timethis
     def instance_method(self, n):
@@ -36,3 +37,8 @@ class Spam:
         while n > 0:
             n -= 1
 
+if __name__ == "__main__":
+    s = Spam()
+    s.instance_method(100)
+    Spam.class_method(10000)
+    Spam.static_method(10000)
