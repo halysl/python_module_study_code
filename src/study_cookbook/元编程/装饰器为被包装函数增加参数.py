@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 # 使用关键字参数来给被包装函数增加额外参数
 # python3 特性
+# 通过强制关键字执行
 
 from functools import wraps
+
 
 def optional_debug(func):
     @wraps(func)
