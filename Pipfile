@@ -13,6 +13,7 @@ numpy = "*"
 pandas = "*"
 pyyaml = "*"
 ipython = "*"
+cx-oracle = "*"
 
 [requires]
 python_version = "3.7"
