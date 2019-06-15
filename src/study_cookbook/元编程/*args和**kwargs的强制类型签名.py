@@ -12,6 +12,7 @@ print(sig, type(sig))
 
 def func(*args, **kwargs):
     print('\n')
+    # 签名对象可以绑定真实参数，并且一一对应生成一个 bond 结构，该结构的 arguments 对象是一个字典
     bound_values = sig.bind(*args, **kwargs)
     for name, value in bound_values.arguments.items():
         print(name, value)
