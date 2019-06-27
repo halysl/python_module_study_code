@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
-# Desc: 
+# FileName:
+# Desc:
 # Author: 刘志
 # Email: halysl0817@gmail.com
 # HomePage: ${link}
@@ -14,6 +14,7 @@
 #=============================================================================
 """
 
+
 def decompression_assignment():
     """解压可迭代对象赋值给多个变量（等数量变量）
     """
@@ -22,9 +23,9 @@ def decompression_assignment():
     x, y = p
     assert x == 4
     assert y == 5
-    
+
     # 嵌套对象同样可以按位置赋值
-    complex_list = [ 'Ash', 18, 91.1, (2012, 12, 21) ]
+    complex_list = ['Ash', 18, 91.1, (2012, 12, 21)]
     name, age, score, date = complex_list
     assert name == 'Ash'
     assert age == 18
@@ -32,7 +33,7 @@ def decompression_assignment():
     assert date == (2012, 12, 21)
 
     # tuple内部也可以按位置取值
-    complex_list = [ 'Ash', 18, 91.1, (2012, 12, 21) ]
+    complex_list = ['Ash', 18, 91.1, (2012, 12, 21)]
     name, age, score, (year, mouth, day) = complex_list
     assert year == 2012
     assert mouth == 12
@@ -46,7 +47,7 @@ def decompression_assignment():
     assert e == 'o'
 
     # 不需要的值可以用占位符（自定义）
-    complex_list = [ 'Ash', 18, 91.1, (2012, 12, 21) ]
+    complex_list = ['Ash', 18, 91.1, (2012, 12, 21)]
     name, _1, _2, _3 = complex_list
     assert name == 'Ash'
     assert _1 == 18
@@ -63,13 +64,13 @@ def decompression_assignment_to_few_param():
     first, *middle, last = scores
     assert first == 1
     assert last == 17
-    assert middle ==  [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    assert middle == [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 
     # 对于list每一项都可以做解压
     records = [
-    ('foo', 1, 2),
-    ('bar', 'hello'),
-    ('foo', 3, 4),
+        ('foo', 1, 2),
+        ('bar', 'hello'),
+        ('foo', 3, 4),
     ]
     for tag, *args in records:
         if tag == 'foo':

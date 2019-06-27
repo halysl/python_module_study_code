@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
+# FileName:
 # Desc: 通过某个关键字排序一个字典列表
 # Author: 刘志
 # Email: halysl0817@gmail.com
@@ -39,8 +39,8 @@ def sort_dictlist_by_keyword():
     assert row_by_fname_and_uid == row_by_fname_and_uid_lambda
 
     num_list = [
-      [1, 3, 4, 5], 
-      [4, 3, 1, 2], 
+      [1, 3, 4, 5],
+      [4, 3, 1, 2],
       [2, 5, 6, 3]
     ]
     # itemgetter接受一个整数，返回可被排序的函数， 这样列表的列表就可以根据index进行排序
@@ -50,13 +50,12 @@ def sort_dictlist_by_keyword():
 
     numlist_by_index0_lambda = sorted(num_list, key=lambda n: n[0])
     numlist_by_index1_lambda = sorted(num_list, key=lambda n: n[1])
-    numlist_by_index0_and_index1_lambda = sorted(num_list, key=lambda n: (n[0], n[1]))
+    numlist_by_index0_and_index1_lambda = sorted(num_list,
+                                                 key=lambda n: (n[0], n[1]))
 
     assert numlist_by_index0 == numlist_by_index0_lambda
     assert numlist_by_index1 == numlist_by_index1_lambda
     assert numlist_by_index0_and_index1 == numlist_by_index0_and_index1_lambda
-
-
 
 if __name__ == "__main__":
     sort_dictlist_by_keyword()
