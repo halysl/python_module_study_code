@@ -19,7 +19,8 @@ def random_shuffle():
 
 def diff_random():
     """
-    random 模块使用 Mersenne Twister 算法来计算生成随机数。这是一个确定性算法， 但是你可以通过 random.seed() 函数修改初始化种子。
+    random 模块使用 Mersenne Twister 算法来计算生成随机数。这是一个确定性算法，
+    但是你可以通过 random.seed() 函数修改初始化种子。
     """
     random.seed()  # Seed based on system time or os.urandom()
     random.seed(12345)  # Seed based on integer given

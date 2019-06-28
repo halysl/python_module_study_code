@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
+# FileName:
 # Desc: 映射名称到序列元素(序列元素可以不通过index进行访问)
 # Author: 刘志
 # Email: halysl0817@gmail.com
@@ -14,6 +14,7 @@
 #=============================================================================
 """
 from collections import namedtuple
+
 
 def named_tuple():
     # 通过namedtuple创建一个命名元组类型

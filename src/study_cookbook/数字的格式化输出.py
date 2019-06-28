@@ -3,7 +3,7 @@
 
 def format_number():
     x = 1234.56789
-    
+
     # Two decimal places of accuracy
     print(format(x, '0.2f'))
 

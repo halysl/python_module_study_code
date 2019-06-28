@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
-# Desc: 
+# FileName:
+# Desc:
 # Author: 刘志
 # Email: halysl0817@gmail.com
 # HomePage: ${link}
@@ -17,6 +17,7 @@
 import heapq
 import random
 
+
 def a_heap():
     """使用一个堆数据结构
     heapq是一个堆类，它拥有很多和堆结构相关的方法
@@ -29,12 +30,13 @@ def a_heap():
     li = [random.randrange(1000) for _ in range(100)]
     assert heapq.nlargest(1, li)[0] == max(li)
     assert heapq.nsmallest(1, li)[0] == min(li)
-    
+
     # heapy的排序底层是调用了heapify方法，使一个序列变为堆排序的结果
     # 此时可以通过heappop方法取出最小值
     heapq.heapify(li)
     assert min(li) == heapq.heappop(li)
     assert min(li) == heapq.heappop(li)
+
 
 class PriorityQueue(object):
     """有优先级的队列"""
@@ -53,11 +55,14 @@ class PriorityQueue(object):
         # heap的结构特性，从列表中输出最小的值（构成的元组）
         return heapq.heappop(self._queue)[-1]
 
-class Item:
-     def __init__(self, name):
-         self.name = name
-     def __repr__(self):
-         return '{!r}'.format(self.name)
+
+class Item():
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return '{!r}'.format(self.name)
+
 
 def priority_queue():
     q = PriorityQueue()
@@ -69,7 +74,6 @@ def priority_queue():
     print q.pop()
     print q.pop()
     print q.pop()
-
 
 if __name__ == '__main__':
     a_heap()

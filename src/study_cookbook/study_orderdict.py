@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
+# FileName:
 # Desc: 字典按插入顺序排序
 # Author: 刘志
 # Email: halysl0817@gmail.com
@@ -28,6 +28,7 @@ def base_dict():
     res = json.dumps(d)
     print(res)
 
+
 def order_dict():
     # orderdict记录字典的插入顺序
     d = OrderedDict()
@@ -46,7 +47,6 @@ def order_dict():
     d['foo'] = 6
     res = json.dumps(d)
     print(res)
-
 
 if __name__ == "__main__":
     base_dict()

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
+# FileName:
 # Desc: 合并多个字典或映射
 # Author: 刘志
 # Email: halysl0817@gmail.com
@@ -16,10 +16,10 @@
 # only on python3
 from collections import ChainMap
 
-a = {'x': 1, 'z': 3 }
-b = {'y': 2, 'z': 4 }
+a = {'x': 1, 'z': 3}
+b = {'y': 2, 'z': 4}
 
-c = ChainMap(a,b)
-print(c['x']) # Outputs 1 (from a)
-print(c['y']) # Outputs 2 (from b)
-print(c['z']) # Outputs 3 (from a)
+c = ChainMap(a, b)
+print(c['x'])  # Outputs 1 (from a)
+print(c['y'])  # Outputs 2 (from b)
+print(c['z'])  # Outputs 3 (from a)

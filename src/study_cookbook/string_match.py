@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
+# FileName:
 # Desc: 使用正则匹配字符串
 # Author: 刘志
 # Email: halysl0817@gmail.com
@@ -29,6 +29,7 @@ False
 10
 >>>
 """
+
 
 def match_by_re():
     # re功能非常强大哦，对于只使用一次匹配，可以使用re.match(match_param, str)
@@ -68,10 +69,11 @@ def match_by_re():
     print m.group(3)
     print m.groups()
 
+
 def match_by_re_ignore_case():
     """忽略大小写的匹配
     """
-    string = 'UPPER PYTHON, lower python, Mixed Python' 
+    string = 'UPPER PYTHON, lower python, Mixed Python'
     li = re.findall('python', string, flags=re.IGNORECASE)
     print li
 

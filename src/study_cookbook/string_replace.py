@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
+# FileName:
 # Desc: 字符串搜索和替换
 # Author: 刘志
 # Email: halysl0817@gmail.com
@@ -15,11 +15,13 @@
 """
 import re
 
+
 def replace_string_with_strmethod():
     text = 'yeah, but no, but yeah, but no, but yeah'
     text.replace('yeah', 'yep')
 
     print text
+
 
 def replace_string_with_resub():
     text = 'Today is 11/27/2012. PyCon starts 3/13/2013.'

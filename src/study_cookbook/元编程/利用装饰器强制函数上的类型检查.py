@@ -26,7 +26,8 @@ def typeassert(*ty_args, **ty_kwargs):
                 if name in bound_types:
                     if not isinstance(value, bound_types[name]):
                         raise TypeError(
-                            'Argument {} must be {}'.format(name, bound_types[name])
+                            'Argument {} must be {}'.format(
+                                name, bound_types[name])
                             )
             return func(*args, **kwargs)
         return wrapper

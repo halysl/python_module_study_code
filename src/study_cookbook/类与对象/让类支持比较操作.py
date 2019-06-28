@@ -62,7 +62,8 @@ def example_total_ordering():
     print('Is h2 greater than or equal to h1?', h2 >= h1)  # Prints False
     # Prints 'h3: 1101-square-foot Split'
     print('Which one is biggest?', max(houses))
-    print('Which is smallest?', min(houses))  # Prints 'h2: 846-square-foot Ranch'
+    # Prints 'h2: 846-square-foot Ranch'
+    print('Which is smallest?', min(houses))
 
 if __name__ == "__main__":
     example_total_ordering()

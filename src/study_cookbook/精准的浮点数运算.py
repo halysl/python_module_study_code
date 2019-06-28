@@ -23,7 +23,7 @@ def control_your_number():
     a = Decimal('1.3')
     b = Decimal('1.7')
     print("a / b = {}".format(a / b))
-    
+
     with localcontext() as ctx:
         ctx.prec = 3
         print("3位小数 a / b = {}".format(a / b))

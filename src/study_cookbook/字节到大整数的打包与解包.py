@@ -4,7 +4,7 @@
 def byte_2_int():
     data = b'\x00\x124V\x00x\x90\xab\x00\xcd\xef\x01\x00#\x004'
     print(len(data))
-    
+
     littele_data = int.from_bytes(data, "little")
     big_data = int.from_bytes(data, "big")
     print(littele_data)

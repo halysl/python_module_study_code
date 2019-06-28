@@ -22,7 +22,7 @@ if __name__ == "__main__":
     yahoo = UrlTemplate(base_url)
     for line in yahoo.open(search='ces'):
         print(line.decode('utf-8'))
-    
+
     yahoo = urltemplate(base_url)
     for line in yahoo(search="qwer"):
         print(line.decode('utf-8'))

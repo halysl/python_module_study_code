@@ -7,6 +7,7 @@ path = os.path.dirname(__file__)
 file_path = os.path.join(path, "sample.bin")
 new_file_path = os.path.join(path, "newsample.bin")
 
+
 def read_into_buffer(filename):
     # 先创建缓冲区
     buf = bytearray(os.path.getsize(filename))

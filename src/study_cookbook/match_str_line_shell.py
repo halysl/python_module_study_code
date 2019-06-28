@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
+# FileName:
 # Desc: 用Shell通配符匹配字符串
 # Author: 刘志
 # Email: halysl0817@gmail.com

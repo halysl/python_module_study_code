@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
-# Desc: 
+# FileName:
+# Desc:
 # Author: 刘志
 # Email: halysl0817@gmail.com
 # HomePage: ${link}
@@ -14,6 +14,7 @@
 #=============================================================================
 """
 from collections import defaultdict
+
 
 def default_dict():
     # defaultdict这个模块要求输入一种类型，并且自动的为dict里面的value设置类型

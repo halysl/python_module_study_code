@@ -3,6 +3,7 @@
 from functools import wraps, partial
 import logging
 
+
 def logged(func=None, *, level=logging.DEBUG, name=None, message=None):
     """这里的写法怪怪的，但是 「理解装饰器的调用」
     """
@@ -20,15 +21,17 @@ def logged(func=None, *, level=logging.DEBUG, name=None, message=None):
 
     return wrapper
 
+
+@logged
 # Example use
 # add = logged(add)，所以装饰器的参数就是默认的
-@logged
 def add(x, y):
     return x + y
 
+
+@logged(level=logging.CRITICAL, name='example')
 # spam = logged(level=logging.CRITICAL, name='example')(spam)
 # 由于 logged 调用的时候，func为空，所以触发 partial 返回一个有参数的 logged，再接受 spam
-@logged(level=logging.CRITICAL, name='example')
 def spam():
     print('Spam!')
 

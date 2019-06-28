@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
+# FileName:
 # Desc: 过滤序列元素(列表推导或filter)
 # Author: 刘志
 # Email: halysl0817@gmail.com
@@ -28,7 +28,7 @@ def fliter_by_fliter(data):
             return True
         else:
             return False
-    
+
     res = list(filter(is_bigger_0, data))
     return res
 

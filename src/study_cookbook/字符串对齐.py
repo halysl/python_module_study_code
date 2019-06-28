@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
 def simple_format():
     # 简单的字符串对齐，直接使用 ljust、rjsut 或者 center 即可。
     text = "Hello World"
@@ -10,6 +11,7 @@ def simple_format():
     print(text.rjust(20, "*"))
     print(text.center(20))
     print(text.center(20, "*"))
+
 
 def complex_format():
     # 复杂格式 通过format实现
