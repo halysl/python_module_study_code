@@ -26,7 +26,8 @@ schema1 = Schema(
     {
         Use(str):
             [
-                {'ip': Use(str), 'sidn': Use(str), 'sid': Use(str), 'port': Use(int)}
+                {'ip': Use(str), 'sidn': Use(str),
+                 'sid': Use(str), 'port': Use(int)}
             ]
     }
 )

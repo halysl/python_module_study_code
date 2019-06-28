@@ -8,9 +8,13 @@
 
 from new_card import AceCard, NumberCard, FaceCard
 
+
 def card5(rank, suit):
-    if rank == 1: return AceCard(rank, suit)
-    elif 2 <= rank < 11: return NumberCard(rank, suit)
-    elif 11 <= rank < 14: return FaceCard(rank, suit)
+    if rank == 1:
+        return AceCard(rank, suit)
+    elif 2 <= rank < 11:
+        return NumberCard(rank, suit)
+    elif 11 <= rank < 14:
+        return FaceCard(rank, suit)
     else:
         raise Exception('rank out of index')

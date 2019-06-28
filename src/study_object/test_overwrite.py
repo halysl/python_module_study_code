@@ -32,7 +32,9 @@ class Student(Person):
         print('{} {} eat now!'.format(self.identity, self.name))
 
     def birth(self):
-        print('{} {} birth in year {}'.format(self.identity, self.name, 2018 - int(self.age)))
+        print('{} {} birth in year {}'.format(self.identity,
+                                              self.name,
+                                              2018 - int(self.age)))
 
 
 if __name__ == "__main__":

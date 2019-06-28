@@ -8,6 +8,7 @@
 
 from card import NumberCard, AceCard, FaceCard
 
+
 def card(rank, suit):
     if rank == 1:
         return AceCard('A', suit)
@@ -19,6 +20,7 @@ def card(rank, suit):
     else:
         raise Exception('Rank out of index!')
 
+
 def card2(rank, suit):
     if rank == 1:
         return AceCard('A', suit)
@@ -27,6 +29,7 @@ def card2(rank, suit):
     else:
         name = {11: 'J', 12: 'Q', 13: 'K'}[rank]
         return FaceCard(name, suit)
+
 
 def card3(rank, suit):
     if rank == 1:
@@ -42,6 +45,8 @@ def card3(rank, suit):
     else:
         raise Exception('Rank out of index')
 
+
 def card4(rank, suit):
-    class_ = {1: AceCard, 11: FaceCard, 12: FaceCard, 13: FaceCard}.get(rank, NumberCard)
+    class_ = {1: AceCard, 11: FaceCard,
+              12: FaceCard, 13: FaceCard}.get(rank, NumberCard)
     return class_

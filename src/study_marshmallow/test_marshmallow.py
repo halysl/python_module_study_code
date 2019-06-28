@@ -39,7 +39,9 @@ class AlbumSchema(Schema):
 
 # 单个object，即object-->dict
 bowie = Artist(name='David Bowie')
-album = Album(artist=bowie, title='Hunky Dory', release_date=date(1971, 12, 17))
+album = Album(artist=bowie,
+              title='Hunky Dory',
+              release_date=date(1971, 12, 17))
 
 schema = AlbumSchema()
 # 单个object的序列化
@@ -55,7 +57,8 @@ pprint(type(result_str))
 # 单个object的反序列化
 # schema.load(dict) == dict-->dict
 # schema.loads(str) == str-->dict
-# if you want dict-->object, you should add a method in 'class AlbumSchema', then use the 'post_load()' decorator
+# if you want dict-->object, you should add a method in 'class AlbumSchema',
+# then use the 'post_load()' decorator
 origin_dict = schema.load(result_dict)
 origin_str = schema.loads(result_str)
 pprint(origin_dict)
@@ -68,9 +71,15 @@ pprint(type(origin_str))
 alice = Artist(name='Alice')
 bob = Artist(name='Bob')
 cinderella = Artist(name='Cinderella')
-alice_album = Album(title='To Alice', release_date=date(1971, 01, 01), artist=alice)
-bob_album = Album(title='Kill Bob', release_date=date(1972, 02, 02), artist=bob)
-cinderella_album = Album(title='Cinderella', release_date=date(1973, 03, 03), artist=cinderella)
+alice_album = Album(title='To Alice',
+                    release_date=date(1971, 01, 01),
+                    artist=alice)
+bob_album = Album(title='Kill Bob',
+                  release_date=date(1972, 02, 02),
+                  artist=bob)
+cinderella_album = Album(title='Cinderella',
+                         release_date=date(1973, 03, 03),
+                         artist=cinderella)
 album = [alice_album, bob_album, cinderella_album]
 
 schema = AlbumSchema(many=True)

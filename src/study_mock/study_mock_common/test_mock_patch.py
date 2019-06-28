@@ -13,8 +13,8 @@ def test_func1():
     num = common_func.func()
     assert num == '1234'
 
+
 @mock.patch('study_mock.study_mock_common.common_func.func')
 def test_func2(mock_func):
     mock_func.return_value = '1'
     assert common_func.func() == '1'
-

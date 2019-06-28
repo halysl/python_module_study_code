@@ -22,7 +22,9 @@ def build(ctx):
     include_dir = [
         os.path.join(root, name)
     ]
-    ctx.run('cp -r {dirs} {build_dir}'.format(dirs=' '.join(include_dir), build_dir=build_dir), echo=True)
+    ctx.run('cp -r {dirs} {build_dir}'.format(dirs=' '.join(include_dir),
+                                              build_dir=build_dir), echo=True)
+
 
 @task
 def lock(ctx):

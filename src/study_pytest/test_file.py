@@ -7,6 +7,7 @@ def openfile():
     f = open('test.txt', 'a')
     return f
 
+
 @pytest.mark.skip
 def test_write1(openfile):
     old_tell = openfile.tell()

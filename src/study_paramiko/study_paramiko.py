@@ -12,9 +12,12 @@ ssh.connect('10.10.100.75', 22, 'root', 'xxxxxxx')
 # 通过stdin,stdout,stderr获得exec_command（）执行命令后的返回结果
 # 命令执行出错并不会抛出异常，所以，对于命令出错需要根据自己的需求进行相应的处理
 stdin, stdout, stderr = ssh.exec_command('ls /')
-# stdout  [u'bin\n', u'boot\n', u'CmdTool.log\n', u'dev\n', u'etc\n', u'get_log.log\n', u'home\n', u'lib\n',
-# u'lib64\n', u'media\n', u'megacli_data.txt\n', u'MegaSAS.log\n', u'mnt\n', u'opt\n', u'oswbb\n', u'proc\n',
-# u'qdata.log\n', u'root\n', u'run\n', u'sbin\n', u'srv\n', u'sys\n', u'tmp\n', u'usr\n', u'var\n']
+# stdout
+# [u'bin\n', u'boot\n', u'CmdTool.log\n', u'dev\n', u'etc\n',
+# u'get_log.log\n', u'home\n', u'lib\n', u'lib64\n', u'media\n',
+# u'megacli_data.txt\n', u'MegaSAS.log\n', u'mnt\n', u'opt\n',
+# u'oswbb\n', u'proc\n', u'qdata.log\n', u'root\n', u'run\n',
+# u'sbin\n', u'srv\n', u'sys\n', u'tmp\n', u'usr\n', u'var\n']
 # stderr []
 print stdout.read()
 print stderr.read()

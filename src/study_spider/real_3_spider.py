@@ -20,16 +20,19 @@ from lxml import html
 
 curr_path = os.path.dirname(os.path.abspath(__file__))
 
+
 def get_logger(level):
     # 生成日志文件名
     log_file_name = os.path.join(curr_path, "spider.log")  # 日志名
     # 创建logger记录器和输出格式
     logger_ = logging.getLogger("second-spider")
     logger_.setLevel(level)
-    formatter = logging.Formatter('[%(name)s %(levelname)s %(asctime)s %(funcName)s %(module)s:%(lineno)d] %(message)s',
-                                  datefmt='%Y-%m-%d %H:%M:%S')
+    formatter = logging.Formatter("[%(name)s %(levelname)s %(asctime)s "
+                                  "%(funcName)s %(module)s:%(lineno)d] "
+                                  "%(message)s", datefmt='%Y-%m-%d %H:%M:%S')
     # 创建文件handler并设置输出格式
-    log_file_handle = logging.handlers.RotatingFileHandler(log_file_name, maxBytes=10 * 1024 * 1024, backupCount=10)
+    log_file_handle = logging.handlers.RotatingFileHandler(
+        log_file_name, maxBytes=10 * 1024 * 1024, backupCount=10)
     log_file_handle.setFormatter(formatter)
 
     logger_.addHandler(log_file_handle)
@@ -45,9 +48,8 @@ if __name__ == "__main__":
     tree = html.fromstring(date)
 
     date = []
-    
     result = tree.xpath('///*[@id="threadlisttableid"]/tbody')
-    
+
     for tbody in result:
         if tbody.xpath('@id')[0].startswith('stickthread'):
             result = tbody.xpath('tr/th/a[2]/text()')
@@ -57,8 +59,8 @@ if __name__ == "__main__":
             result = tbody.xpath('tr/th/a/text()')
         else:
             result = tbody.xpath('tr/td[2]/a/text()')
-        
+
         if result:
             date.extend(result)
-    
+
     print date

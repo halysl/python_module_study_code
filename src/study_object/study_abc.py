@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 #=============================================================================
-# FileName: 
-# Desc: 
+# FileName:
+# Desc:
 # Author: 刘志
 # Email: halysl0817@gmail.com
 # HomePage: ${link}
@@ -36,6 +36,7 @@ class SocketStream(IStream):
     def write(self, data):
         pass
 
+
 def serialize(stream):
     if not isinstance(stream, IStream):
         raise TypeError('Expected an IStream')
@@ -51,25 +52,27 @@ class Collect():
     @abstractmethod
     def collect(self, cmd):
         pass
-    
+
     @abstractmethod
     def show(self):
         pass
 
+
 class BaseCollect(Collect):
     def __init__(self):
         super(BaseCollect, self).__init__('base')
-    
+
     def collect(self, cmd):
         print(cmd)
-    
+
     def show(self):
         print(self.name)
+
 
 class DetailCollect(BaseCollect):
     def __init__(self):
         super(DetailCollect, self).__init__()
-    
+
 
 if __name__ == "__main__":
     bc = BaseCollect()

@@ -41,7 +41,7 @@ context['colors'] = [
 
 # 渲染一个带有link的富文本
 rt_link = RichText('You can add an hyperlink, here to ')
-rt_link.add('google',url_id=doc.build_url_id('http://google.com'))
+rt_link.add('google', url_id=doc.build_url_id('http://google.com'))
 context['link'] = rt_link
 
 # 渲染一个非主流文字颜色的富文本

@@ -12,21 +12,21 @@ class Card(object):
         self.suit = suit
         self.rank = rank
         self.soft, self.hard = self._point()
-    
+
     def _point(self):
         return 0, 0
+
 
 class NumberCard(Card):
     def _point(self):
         return int(self.rank), int(self.rank)
 
+
 class AceCard(Card):
     def _point(self):
         return 1, 11
 
+
 class FaceCard(Card):
     def _point(self):
         return 10, 10
-
-
-        

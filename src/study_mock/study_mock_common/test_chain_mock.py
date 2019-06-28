@@ -9,8 +9,8 @@
 import mock
 import common_func
 
+
 class TestTea():
-    
     @mock.patch('study_mock.study_mock_common.common_func.Tea')
     def test_return_a(self, mock_tea):
         mock_tea.return_value.return_a.return_value = '1'

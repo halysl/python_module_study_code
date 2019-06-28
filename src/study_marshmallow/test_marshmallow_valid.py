@@ -27,7 +27,8 @@ class ValidUserSchema(UserSchema):
     # name必须存在
     name = fields.Str(required=True, data_key='id')
     # email必须正则匹配特定的规则
-    email = fields.Email(validate=validate.Regexp('[0-9a-zA-Z.]+@woqutech.com'))
+    email = fields.Email(
+        validate=validate.Regexp('[0-9a-zA-Z.]+@woqutech.com'))
     # age可以通过设定validate进行值的范围判断
     # age = fields.Number(validate=lambda n: 18 <= n <= 41)
     # age = fields.Number(validate=validate.Range(18, 41))
