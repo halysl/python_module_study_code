@@ -15,6 +15,7 @@ pyyaml = "*"
 ipython = "*"
 cx-oracle = "*"
 tornado = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
