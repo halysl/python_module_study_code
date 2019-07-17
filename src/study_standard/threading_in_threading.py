@@ -3,7 +3,8 @@ import threading
 
 
 def print_hello():
-    print("current threding name:{}\nhello!\n".format(threading.current_thread().name))
+    print("current threding name:{}\n"
+          "hello!\n".format(threading.current_thread().name))
 
 
 def create_thread(thread_name, func):
@@ -12,7 +13,8 @@ def create_thread(thread_name, func):
 
 def test():
     t_son = create_thread("thread son", print_hello)
-    t_son_son = create_thread("thread son son", create_thread("thread son", print_hello))
+    t_son_son = create_thread("thread son son",
+                              create_thread("thread son", print_hello))
     t_son.start()
     t_son.join()
 

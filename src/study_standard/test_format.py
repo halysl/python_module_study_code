@@ -13,8 +13,9 @@ str1 = ("scp {ip}:{oracle_base}/diag/rdbms/{dbname}/"
     db_ins_name=db_ins_name,
     output_dir=OUTPUT_DIR)
 
-str2 = 'scp ' + server[
-    'ip'] + ':' + ORACLE_BASE + '/diag/rdbms/' + dbname.lower() + '/' + db_ins_name + '/trace/alert_' + db_ins_name + '.log ' + OUTPUT_DIR + '/'
+str2 = 'scp ' + server['ip'] + ':' + ORACLE_BASE + '/diag/rdbms/' + \
+    dbname.lower() + '/' + db_ins_name + \
+    '/trace/alert_' + db_ins_name + '.log ' + OUTPUT_DIR + '/'
 
 print(str1)
 print(str2)

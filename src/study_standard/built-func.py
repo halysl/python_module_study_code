@@ -63,4 +63,3 @@ print(sorted(a, key=lambda x: x[1]))
 b = [{'city': '深圳', 'tem': 40}, {'city': '广州', 'tem': 30}]
 result = sorted(b, key=lambda x: x['tem'])
 print(result)
- 

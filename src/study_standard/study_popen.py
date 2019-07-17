@@ -7,7 +7,8 @@
 from subprocess import Popen, PIPE
 
 cmd = 'su - grid'
-p = Popen(cmd, bufsize=1000, shell=True, close_fds=True, stdout=PIPE, stderr=PIPE, stdin=PIPE)
+p = Popen(cmd, bufsize=1000, shell=True, close_fds=True,
+          stdout=PIPE, stderr=PIPE, stdin=PIPE)
 cmd2 = 'ls'
 p.stdin.write(cmd2)
 result = p.communicate()
