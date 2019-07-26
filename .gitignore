@@ -109,3 +109,6 @@ ENV/
 .vscode
 test
 .venv
+
+src/utils/get_temp.py
+src/study_docx_templates/generated_doc.docx
