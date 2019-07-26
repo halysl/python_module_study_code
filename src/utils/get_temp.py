@@ -37,5 +37,5 @@ if __name__ == "__main__":
 
     key = "cbd6176e-9f0b-4a78-b8b2-"
     hook = f"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?{key}"
-    mentioned_mobile_list = ["18258261294", "18340818166"]
+    mentioned_mobile_list = []
     create_hookinfo(hook, msg, mentioned_mobile_list)
