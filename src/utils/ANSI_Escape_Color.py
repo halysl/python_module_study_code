@@ -94,6 +94,25 @@ def style_print(string, mode='', fore='', back=''):
     end = '\033[%sm' % STYLE['default']['end'] if style else ''
 
     print('%s%s%s' % (style, string, end))
+    return '%s%s%s' % (style, string, end)
+
+
+def get_6():
+    ret_9 = style_print("9", fore='red')
+    ret_6 = style_print("6", fore='green')
+    origin = """
+99669999996669999996699666699699999999699999999
+99699999999699999999699666699666699666666699666
+99669999999999999996699666699666699666666699666
+99666699999999999966666999966666699666666699666
+99666666999999996666666699666666699666666699666
+99666666669999666666666699666666699666666699666
+99666666666996666666666699666666699666666699666
+"""
+    new = origin.replace("9", ret_9).replace("6", ret_6)
+    with open("test.col", 'w') as f:
+        f.write(new)
+    print(new)
 
 
 def TestColor():
@@ -126,3 +145,4 @@ def TestColor():
 
 if __name__ == '__main__':
     TestColor()
+    get_6()
