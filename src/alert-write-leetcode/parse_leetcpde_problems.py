@@ -32,14 +32,15 @@ def parse_info(more_data):
             continue
     info_list.sort(key=lambda x: x["level"])
     dt = datetime(2019, 8, 9, 0, 0, 0, 0)
+    new_dict = {}
     for info in info_list:
         today = dt.strftime("%Y%m%d")
-        info["day"] = today
+        new_dict[today] = info
         if dt.weekday == 6:
             dt = dt + timedelta(days=2)
         else:
             dt = dt + timedelta(days=1)
-    return info_list
+    return new_dict
 
 if __name__ == "__main__":
     data = get_info("leetcode_all_problems.json")
