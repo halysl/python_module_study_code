@@ -17,9 +17,10 @@ shutil.move(src, dst)
 # 复制目录中的符号链接而不是 符号链接指向的文件
 shutil.copytree(src, dst, symlinks=True)
 
-# 通过忽略函数忽略部分file
+
 def ignore_pyc_files(dirname, filenames):
     return [name in filenames if name.endswith('.pyc')]
 
+# 通过忽略函数忽略部分file
 shutil.copytree(src, dst, ignore=ignore_pyc_files)
 shutil.copytree(src, dst, ignore=shutil.ignore_patterns('*~', '*.pyc'))
