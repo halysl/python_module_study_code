@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-from 测试stdout输出 import url_print
+import unittest
 from io import StringIO
 from unittest import TestCase
 from unittest.mock import patch
+
+from example import url_print
 
 
 class TestURLPrint(TestCase):
@@ -10,8 +12,11 @@ class TestURLPrint(TestCase):
         protocol = "http"
         host = "www"
         domain = "example.com"
-        expected_url = f"{protocol}://{host}.{domain}"
+        expected_url = f"{protocol}://{host}.{domain}\n"
 
-        with patch("sys.stout", new=StringIO()) as fake_out:
+        with patch("sys.stdout", new=StringIO()) as fake_out:
             url_print(protocol, host, domain)
             self.assertEqual(fake_out.getvalue(), expected_url)
+
+if __name__ == "__main__":
+    unittest.main()
