@@ -32,7 +32,9 @@ def run(cmd, filter_=False, ssh=None):
             err_msg = stderr.read()
             exit_code = 0
         else:
-            p = subprocess.Popen(cmd, shell=True, close_fds=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            p = subprocess.Popen(cmd, shell=True, close_fds=True,
+                                 stdout=subprocess.PIPE,
+                                 stderr=subprocess.PIPE)
             out_msg = p.stdout.read()
             err_msg = p.stderr.read()
             exit_code = p.wait()
@@ -59,7 +61,10 @@ def run(cmd, filter_=False, ssh=None):
 def run_cmd(cmd, filter_=False, ssh=None):
     result = run(cmd=cmd, filter_=filter_, ssh=ssh)
     if result["exit_code"] != 0:
-        msg = result["stderr"].strip() if result["stderr"] else result["stdout"].strip()
+        if result["stderr"]:
+            msg = result["stderr"].strip()
+        else:
+            msg = result["stdout"].strip()
         raise Exception(msg)
     else:
         return result["stdout"]
@@ -69,7 +74,8 @@ base_path = os.path.dirname(os.path.abspath(__file__))
 
 log_dir = os.path.join(base_path)
 target = os.path.join(base_path, 'x.tar.gz')
-cmd = 'find {} -mtime -10 -print0 | xargs -0 tar czvf {}'.format(log_dir, target)
+cmd = 'find {} -mtime -10 -print0 | xargs -0 tar czvf {}'.format(
+    log_dir, target)
 
 # --warning=no-file-changed --absolute-names
 info = "collect grid files which changed in 10 days"
@@ -78,5 +84,3 @@ try:
     print('green', info)
 except:
     print("red {}, the command is: {}".format(info, cmd))
-
-
