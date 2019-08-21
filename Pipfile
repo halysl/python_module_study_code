@@ -16,6 +16,8 @@ ipython = "*"
 cx-oracle = "*"
 tornado = "*"
 requests = "*"
+prompt-toolkit = "*"
+pygments = "*"
 
 [requires]
 python_version = "3.7"
