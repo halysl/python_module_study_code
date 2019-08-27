@@ -18,6 +18,8 @@ tornado = "*"
 requests = "*"
 prompt-toolkit = "*"
 pygments = "*"
+seaborn = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"
