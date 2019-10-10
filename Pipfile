@@ -20,6 +20,9 @@ prompt-toolkit = "*"
 pygments = "*"
 seaborn = "*"
 matplotlib = "*"
+apscheduler = "*"
+sqlalchemy = {index = "https://pypi.douban.com/simple/",version = "*"}
+mysql = {index = "https://pypi.douban.com/simple/",version = "*"}
 
 [requires]
 python_version = "3.7"

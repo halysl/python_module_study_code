@@ -24,7 +24,7 @@ r = Role(name='user')
 session.add(u)
 session.add(r)
 session.commit()
-print r.id
+print(r.id)
 
 # 3 修改数据
 # 3.1 使用merge方法，如果存在则修改，如果不存在则插入（只判断主键，不判断unique列）
@@ -59,12 +59,12 @@ users3 = session.query(User).order_by(desc(User.name))
 # 5.6 只查询部分属性
 users4 = session.query(User.name).order_by(desc(User.name))
 for user in users4:
-    print user.name
+    print(user.name)
 
 # 5.7 给结果集的列取别名
 users5 = session.query(User.name.label('user_name')).all()
 for user in users5:
-    print user.user_name
+    print(user.user_name)
 
 # 5.8 去重查询（需要导入distinct方法
 users6 = session.query(distinct(User.name).label('name')).all()
@@ -77,7 +77,7 @@ age_sum = session.query(func.sum(User.age)).first()
 # 5.10 分组查询
 users7 = session.query(func.count(User.name).label('count'), User.age).group_by(User.age)
 for user in users7:
-    print 'age:{0}, count:{1}'.format(user.age, user.count)
+    print('age:{0}, count:{1}'.format(user.age, user.count))
 
 # 6.1 exists查询(不存在则为~exists())
 session.query(User.name).filter(~exists().where(User.id == Role.id))
