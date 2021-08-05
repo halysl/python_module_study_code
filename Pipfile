@@ -8,21 +8,25 @@ pylint = "<2.0.0"
 pep8 = "*"
 
 [packages]
+urllib3 = ">=1.26.5"
 docxtpl = "*"
 numpy = "*"
 pandas = "*"
-pyyaml = "*"
+PyYAML = ">=5.4"
 ipython = "*"
 cx-oracle = "*"
 tornado = "*"
 requests = "*"
 prompt-toolkit = "*"
-pygments = "*"
+Pygments = ">=2.7.4"
 seaborn = "*"
 matplotlib = "*"
 apscheduler = "*"
+jinja2 = ">=2.11.3"
+lxml = ">=4.6.3"
 sqlalchemy = {index = "https://pypi.douban.com/simple/",version = "*"}
 mysql = {index = "https://pypi.douban.com/simple/",version = "*"}
 
 [requires]
 python_version = "3.7"
+
