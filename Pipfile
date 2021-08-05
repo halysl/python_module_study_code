@@ -26,7 +26,7 @@ jinja2 = ">=2.11.3"
 lxml = ">=4.6.3"
 sqlalchemy = {index = "https://pypi.douban.com/simple/",version = "*"}
 mysql = {index = "https://pypi.douban.com/simple/",version = "*"}
+pyqt5 = "*"
 
 [requires]
-python_version = "3.7"
-
+python_version = "3.8.5"
